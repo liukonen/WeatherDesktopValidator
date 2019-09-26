@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="IClassName.cs" />
+    <Compile Remove="ILatLongInterface.cs" />
+    <Compile Remove="ISharedInterface.cs" />
+    <Compile Remove="ISharedResponse.cs" />
+    <Compile Remove="IsharedSunRiseSetInterface.cs" />
+    <Compile Remove="ISharedWeatherinterface.cs" />
+    <Compile Remove="Shared\SharedObjects.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Shared\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="System.Runtime.Caching" Version="4.6.0" />
+  </ItemGroup>
+
+</Project>
