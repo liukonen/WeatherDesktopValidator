@@ -6,3 +6,4 @@ Learnings
 - Razor pages
 - ASP.NET Core
 - Docker
+- .net core cli app development
