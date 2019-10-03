@@ -57,15 +57,13 @@
 
 <div class="container">
     <div class="row">
-        @Model.Responses
-
         @foreach (WeatherDesktopSharedCore.Interfaces.Isrs item in Model.SunObjects)
         {
             var bg = "card text-white bg-success  mb-3";
             if (!item.Success()) { bg = "card text-white bg-danger  mb-3"; }
             <div class="col-4">
                 <div class="@bg">
-                    <div class="card-header">@item.ToString()</div>
+                    <div class="card-header"><a href="@item.PostUrl()" class="text-dark">@item.ToString()</a></div>
                     <div class="card-body">
                         <ul>
                             @if (item.Success())
@@ -90,7 +88,7 @@
             if (!item.Success()) { bg = "card text-white bg-danger  mb-3"; }
             <div class="col-4">
                 <div class="@bg">
-                    <div class="card-header">@item.ToString()</div>
+                    <div class="card-header"><a href="@item.PostUrl()" class="text-dark">@item.ToString()</a></div>
                     <div class="card-body">
                         <ul>
                             @if (item.Success())

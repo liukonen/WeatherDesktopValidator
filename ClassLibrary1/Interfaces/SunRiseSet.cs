@@ -10,7 +10,7 @@ namespace WeatherDesktopSharedCore.Interfaces
     {
         private Boolean _Success;
         private string _err;
-
+        private string _url;
         private DateTime _solarNoon;
         private DateTime _sunRise;
         private DateTime _sunSet;
@@ -26,7 +26,10 @@ namespace WeatherDesktopSharedCore.Interfaces
         public override string Status() { return _status; }
         public override DateTime SunRise() { return _sunRise; }
         public override DateTime SunSet() { return _sunSet; }
-
+        public override string PostUrl()
+        {
+            return _url;
+        }
 
 
         public override void Invoke()
@@ -40,6 +43,7 @@ namespace WeatherDesktopSharedCore.Interfaces
                 //else
                 //{
                     string url = string.Format(SRS_Url, Latitude.ToString(), Longitude.ToString());
+                _url = url;
                     value = CompressedCallSite(url);
                 //   SharedObjects.Cache.Set(ClassName, value);
                 //}
@@ -61,11 +65,21 @@ namespace WeatherDesktopSharedCore.Interfaces
  
         }
 
-        const string SRS_Url = "";
-        const double Latitude = 0;
-        const double Longitude = 0;
+        //const string SRS_Url = "https://api.sunrise-sunset.org/json?lat={0}&amp;lng={1}&amp;date=today&amp;formatted=0";
+        const string SRS_Url = "https://api.sunrise-sunset.org/json?lat={0}&lng={1}&formatted=0";
 
+        const double Latitude = 43.0389;
+        const double Longitude = -87.9065;
 
+        /*
+         https://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400
+
+https://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400&date=today
+
+https://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400&date=2019-10-01
+
+https://api.sunrise-sunset.org/json?lat={0}&lng={1}&formatted=0
+             */
 
 
 #pragma warning disable 0649

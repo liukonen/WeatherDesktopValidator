@@ -12,7 +12,9 @@ namespace WeatherDesktopSharedCore.Interfaces
         private int _Temp;
         private string _err;
         private string _forcast;
+        private string _url;
         private WeatherTypes _type;
+        public override string PostUrl() { return _url; }
         public override string ToString()
         {
             return "MS Weather";
@@ -28,6 +30,7 @@ namespace WeatherDesktopSharedCore.Interfaces
         {
             try
             {
+                _url = string.Format(Main, ZipCode);
                 string Response = CompressedCallSite(string.Format(Main, ZipCode));
                 TransformWeather(Response);
                 _Success = true;

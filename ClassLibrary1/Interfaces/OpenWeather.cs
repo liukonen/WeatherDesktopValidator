@@ -4,6 +4,7 @@ using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
+
 namespace WeatherDesktopSharedCore.Interfaces
 {
     public class OpenWeather : BaseBoth
@@ -18,17 +19,22 @@ namespace WeatherDesktopSharedCore.Interfaces
         {
             return "Open Weather";
         }
+        private string _url;
         private DateTime _solarNoon;
         private DateTime _sunRise;
         private DateTime _sunSet;
         private string _status;
+ 
 
         public override string ErrorMessages() { return _err; }
         public override string ForcastDescription() { return _forcast; }
         public override bool Success() { return _Success; }
         public override int Temp() { return _Temp; }
         public override WeatherTypes WType() { return _type; }
-
+        public override string PostUrl()
+        {
+            return _url;
+        }
         public override DateTime SolarNoon() { return _solarNoon; }
         public override string Status() { return _status; }
         public override DateTime SunRise() { return _sunRise; }
@@ -57,13 +63,14 @@ namespace WeatherDesktopSharedCore.Interfaces
         }
 
         const string OpenWeather_Url = "http://api.openweathermap.org/data/2.5/weather?zip={0}&appid={1}&units=imperial";
-        const string APIKey = "";
+        public string APIKey;
         private string GetValue
         {
             get
             {
                 
                 string url = string.Format(OpenWeather_Url, ZipCode, APIKey);
+                _url = url;
                 string value = CompressedCallSite(url);
                 return value;
             }

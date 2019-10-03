@@ -10,7 +10,8 @@ namespace WeatherDesktopSharedCore.Interfaces
 {
     public abstract class Base
     {
-        
+
+
      
 
         public string ZipCode = "53217";
@@ -18,6 +19,7 @@ namespace WeatherDesktopSharedCore.Interfaces
 
         public static string CompressedCallSite(string Url, string UserAgent)
         {
+            
             if (Cache.Exists(string.Concat(UserAgent, Url))) { return Cache.StringValue(string.Concat(UserAgent, Url)); }
 
             HttpWebRequest request = (System.Net.HttpWebRequest)HttpWebRequest.Create(Url);
@@ -49,6 +51,7 @@ namespace WeatherDesktopSharedCore.Interfaces
         public abstract bool Success();
         public abstract int Temp();
         public abstract WeatherTypes WType();
+        public abstract string PostUrl();
     }
 
     public abstract class BaseSun : Base, Isrs
@@ -60,6 +63,7 @@ namespace WeatherDesktopSharedCore.Interfaces
         public abstract bool Success();
         public abstract DateTime SunRise();
         public abstract DateTime SunSet();
+        public abstract string PostUrl();
     }
 
     public abstract class BaseBoth : Base, IBoth
@@ -74,6 +78,7 @@ namespace WeatherDesktopSharedCore.Interfaces
         public abstract DateTime SunSet();
         public abstract int Temp();
         public abstract WeatherTypes WType();
+        public abstract string PostUrl();
     }
 
 

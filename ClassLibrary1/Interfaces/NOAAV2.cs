@@ -14,7 +14,7 @@ namespace WeatherDesktopSharedCore.Interfaces
         private string _err;
         private string _forcast;
         private WeatherTypes _type;
-
+        private string _url;
         public override string ErrorMessages() { return _err; }
         public override string ForcastDescription() { return _forcast; }
         public override bool Success() { return _Success; }
@@ -24,10 +24,15 @@ namespace WeatherDesktopSharedCore.Interfaces
         {
             return "Weather.Gov";
         }
+        public override string PostUrl()
+        {
+            return _url;
+        }
         public override void Invoke()
         {
             try
             {
+                _url = string.Format(Gov_Weather_Url, ZipCode);
                 string httpResponse = CompressedCallSite(string.Format(Gov_Weather_Url, ZipCode), Gov_User);
                 Transform(httpResponse);
                 _Success = true;

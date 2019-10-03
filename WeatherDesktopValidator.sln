@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2041
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29326.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherDesktopValidator", "WeatherDesktopValidator\WeatherDesktopValidator.csproj", "{4EA0D746-45B4-4EC1-A433-CA98A61F12B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherDesktopValidator", "WeatherDesktopValidator\WeatherDesktopValidator.csproj", "{4EA0D746-45B4-4EC1-A433-CA98A61F12B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherDesktopSharedCore", "ClassLibrary1\WeatherDesktopSharedCore.csproj", "{0A560E55-ABB4-4EEA-83AB-3A3B60643618}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherDesktopSharedCore", "ClassLibrary1\WeatherDesktopSharedCore.csproj", "{0A560E55-ABB4-4EEA-83AB-3A3B60643618}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "weatherValidate", "weatherValidate\weatherValidate.csproj", "{F7DA2703-823D-4C9F-A7A0-C9273874F17F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{0A560E55-ABB4-4EEA-83AB-3A3B60643618}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A560E55-ABB4-4EEA-83AB-3A3B60643618}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A560E55-ABB4-4EEA-83AB-3A3B60643618}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7DA2703-823D-4C9F-A7A0-C9273874F17F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7DA2703-823D-4C9F-A7A0-C9273874F17F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7DA2703-823D-4C9F-A7A0-C9273874F17F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7DA2703-823D-4C9F-A7A0-C9273874F17F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
