@@ -1,27 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <DockerTargetOS>Linux</DockerTargetOS>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Remove="Pages\About.cshtml.cs" />
     <Compile Remove="Pages\Contact.cshtml.cs" />
   </ItemGroup>
-
   <ItemGroup>
     <Content Remove="Pages\About.cshtml" />
     <Content Remove="Pages\Contact.cshtml" />
   </ItemGroup>
-
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.11.1" />
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.2.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.0" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\ClassLibrary1\WeatherDesktopSharedCore.csproj" />
   </ItemGroup>
-
 </Project>
