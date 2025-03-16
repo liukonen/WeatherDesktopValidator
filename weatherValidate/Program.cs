@@ -18,7 +18,6 @@ namespace weatherValidate
             new List<Iweather>();
             List<ISharedResponse> obj = new List<ISharedResponse>
             {
-                new MSWeather(),
                 new NOAAV2(),
                 new OpenWeather
                 {
